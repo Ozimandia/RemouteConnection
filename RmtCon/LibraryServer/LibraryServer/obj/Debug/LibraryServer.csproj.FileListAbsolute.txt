@@ -1,0 +1,9 @@
+C:\Users\User\Desktop\Рабочие программы\Visual Studio\LibraryServer\LibraryServer\bin\Debug\LibraryServer.exe.config
+C:\Users\User\Desktop\Рабочие программы\Visual Studio\LibraryServer\LibraryServer\obj\Debug\LibraryServer.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\Рабочие программы\Visual Studio\LibraryServer\LibraryServer\obj\Debug\LibraryServer.Properties.Resources.resources
+C:\Users\User\Desktop\Рабочие программы\Visual Studio\LibraryServer\LibraryServer\obj\Debug\LibraryServer.csproj.GenerateResource.Cache
+C:\Users\User\Desktop\Рабочие программы\Visual Studio\LibraryServer\LibraryServer\bin\Debug\LibraryServer.exe
+C:\Users\User\Desktop\Рабочие программы\Visual Studio\LibraryServer\LibraryServer\bin\Debug\LibraryServer.pdb
+C:\Users\User\Desktop\Рабочие программы\Visual Studio\LibraryServer\LibraryServer\obj\Debug\LibraryServer.exe
+C:\Users\User\Desktop\Рабочие программы\Visual Studio\LibraryServer\LibraryServer\obj\Debug\LibraryServer.pdb
+C:\Users\User\Desktop\Рабочие программы\Visual Studio\LibraryServer\LibraryServer\obj\Debug\LibraryServer.StartServerForm.resources
