@@ -34,7 +34,7 @@ namespace LibraryClient
             {
                 CoderDecoder decod = new CoderDecoder();
 
-                string message = String.Format("DID{0}#{1}#1&", "[ID]", ChangeIDText.Text);
+                string message = String.Format("DID{0}#{1}#Выданные книги&", "[ID]", ChangeIDText.Text);
                 message = form.client.SendMessage(message);
 
                 string[] data = decod.DecodMessage1(message);

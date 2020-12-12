@@ -48,7 +48,7 @@ namespace LibraryClient
             {
                 CoderDecoder decod = new CoderDecoder();
 
-                string message = String.Format("DID{0}#{1}#0&", "[Читательский билет]", DeleteReaderCardText.Text);
+                string message = String.Format("DID{0}#{1}#Читатели&", "[Читательский билет]", DeleteReaderCardText.Text);
                 message = form.client.SendMessage(message);
 
                 string[] data = decod.DecodMessage1(message);

@@ -170,78 +170,188 @@ namespace TCPprotocol
                     break;
                 case "BAD":
                     command = command.Remove(0, 3);
-                    dataBase.Tables[2].FindDataCommand(true, command);
-                    Send = coder.CodMessage(dataBase.Tables[2].Fields);
-                    Send += coder.CodMessage(dataBase.Tables[2].Data);
+                    for (int i = 0; i < dataBase.Tables.Length; i++)
+                    {
+                        if (dataBase.Tables[i].Name == "Книги")
+                        {
+                            dataBase.Tables[i].FindDataCommand(true, command);
+                            Send = coder.CodMessage(dataBase.Tables[i].Fields);
+                            Send += coder.CodMessage(dataBase.Tables[i].Data);
+                            break;
+                        }
+                    }
                     break;
                 case "RAD":
                     command = command.Remove(0, 3);
-                    dataBase.Tables[0].FindDataCommand(true, command);
-                    Send = coder.CodMessage(dataBase.Tables[0].Fields);
-                    Send += coder.CodMessage(dataBase.Tables[0].Data);
+                    for (int i = 0; i < dataBase.Tables.Length; i++)
+                    {
+                        if (dataBase.Tables[i].Name == "Читатели")
+                        {
+                            dataBase.Tables[i].FindDataCommand(true, command);
+                            Send = coder.CodMessage(dataBase.Tables[i].Fields);
+                            Send += coder.CodMessage(dataBase.Tables[i].Data);
+                            break;
+                        }
+                    }
                     break;
                 case "VAD":
                     command = command.Remove(0, 3);
-                    dataBase.Tables[1].FindDataCommand(true, command);
-                    Send = coder.CodMessage(dataBase.Tables[1].Fields);
-                    Send += coder.CodMessage(dataBase.Tables[1].Data);
+
+                    for (int i = 0; i < dataBase.Tables.Length; i++)
+                    {
+                        if (dataBase.Tables[i].Name == "Выданные книги")
+                        {
+                            dataBase.Tables[i].FindDataCommand(true, command);
+                            Send = coder.CodMessage(dataBase.Tables[i].Fields);
+                            Send += coder.CodMessage(dataBase.Tables[i].Data);
+                            break;
+                        }
+                    }
+
                     break;
                 case "ADB":
                     command = command.Remove(0, 3);
                     data1 = coder.DecodMessage1(command);
-                    dataBase.Tables[2].AddData(data1);
+
+                    for (int i = 0; i < dataBase.Tables.Length; i++)
+                    {
+                        if (dataBase.Tables[i].Name == "Книги")
+                        {
+                            dataBase.Tables[i].AddData(data1);
+                            break;
+                        }
+                    }
+
                     Send = "Данные добавлены:";
                     break;
                 case "ADR":
                     command = command.Remove(0, 3);
                     data1 = coder.DecodMessage1(command);
-                    dataBase.Tables[0].AddData(data1);
+
+                    for (int i = 0; i < dataBase.Tables.Length; i++)
+                    {
+                        if (dataBase.Tables[i].Name == "Читатели")
+                        {
+                            dataBase.Tables[i].AddData(data1);
+                            break;
+                        }
+                    }
                     Send = "Данные добавлены:";
                     break;
                 case "ATB":
                     command = command.Remove(0, 3);
                     data1 = coder.DecodMessage1(command);
-                    dataBase.Tables[1].AddData(data1);
+
+                    for (int i = 0; i < dataBase.Tables.Length; i++)
+                    {
+                        if (dataBase.Tables[i].Name == "Выданные книги")
+                        {
+                            dataBase.Tables[i].AddData(data1);
+                            break;
+                        }
+                    }
+
                     Send = "Данные добавлены:";
                     break;
                 case "DID":
                     command = command.Remove(0, 3);
                     data1 = coder.DecodMessage1(command);
-                    int index = int.Parse(data1[2]);
-                    dataBase.Tables[index].ReciveDataID(data1[0], data1[1]);
-                    Send = coder.CodMessage(dataBase.Tables[index].Data);
+                    for (int i = 0; i < dataBase.Tables.Length; i++)
+                    {
+                        if (dataBase.Tables[i].Name == data1[2])
+                        {
+                            dataBase.Tables[i].ReciveDataID(data1[0], data1[1]);
+                            Send = coder.CodMessage(dataBase.Tables[i].Data);
+                            break;
+                        }
+                    }
                     break;
                 case "DDB":
                     command = command.Remove(0, 3);
                     data1 = coder.DecodMessage1(command);
-                    dataBase.Tables[2].DeleteData(data1[0], data1[1]);
+
+                    for (int i = 0; i < dataBase.Tables.Length; i++)
+                    {
+                        if (dataBase.Tables[i].Name == "Книги")
+                        {
+                            dataBase.Tables[i].DeleteData(data1[0], data1[1]);
+                            break;
+                        }
+                    }
+
                     Send = "Данные удалены:";
                     break;
                 case "DDR":
                     command = command.Remove(0, 3);
                     data1 = coder.DecodMessage1(command);
-                    dataBase.Tables[0].DeleteData(data1[0], data1[1]);
+
+                    for (int i = 0; i < dataBase.Tables.Length; i++)
+                    {
+                        if (dataBase.Tables[i].Name == "Читатели")
+                        {
+                            dataBase.Tables[i].DeleteData(data1[0], data1[1]);
+                            break;
+                        }
+                    }
+
                     Send = "Данные удалены:";
                     break;
                 case "DGB":
                     command = command.Remove(0, 3);
                     data1 = coder.DecodMessage1(command);
-                    dataBase.Tables[1].DeleteData(data1[0], data1[1]);
+
+                    for (int i = 0; i < dataBase.Tables.Length; i++)
+                    {
+                        if (dataBase.Tables[i].Name == "Выданные книги")
+                        {
+                            dataBase.Tables[i].DeleteData(data1[0], data1[1]);
+                            break;
+                        }
+                    }
+
                     Send = "Данные удалены:";
                     break;
                 case "CDB":
                     command = command.Remove(0, 3);
+
+                    for (int i = 0; i < dataBase.Tables.Length; i++)
+                    {
+                        if (dataBase.Tables[i].Name == "Книги")
+                        {
+                            dataBase.Tables[i].FindDataCommand(false, command);
+                            break;
+                        }
+                    }
+
                     dataBase.Tables[2].FindDataCommand(false, command);
                     Send = "Данные изменены:";
                     break;
                 case "CDR":
                     command = command.Remove(0, 3);
-                    dataBase.Tables[0].FindDataCommand(false, command);
+
+                    for (int i = 0; i < dataBase.Tables.Length; i++)
+                    {
+                        if (dataBase.Tables[i].Name == "Читатели")
+                        {
+                            dataBase.Tables[i].FindDataCommand(false, command);
+                            break;
+                        }
+                    }
+
                     Send = "Данные изменены:";
                     break;
                 case "CGB":
                     command = command.Remove(0, 3);
-                    dataBase.Tables[1].FindDataCommand(false, command);
+
+                    for (int i = 0; i < dataBase.Tables.Length; i++)
+                    {
+                        if (dataBase.Tables[i].Name == "Выданные книги")
+                        {
+                            dataBase.Tables[i].FindDataCommand(false, command);
+                            break;
+                        }
+                    }
+
                     Send = "Данные изменены:";
                     break;
             }
